@@ -2,7 +2,8 @@
 # bin/release <build-dir>
 
 cat << EOF
-addons: []
+config_vars:
+    MYENV: myjdk
 default_process_types:
-  web: npm start
+    web: sh boot.sh
 EOF
