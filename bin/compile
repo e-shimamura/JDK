@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+################################################################################
+# bin/compile <build-dir> <cache-dir>                                          #
+################################################################################
 
 # ---------------------------------------------------------------------------- #
 # 変数を設定                                                                   #
@@ -7,13 +11,21 @@ BUILDPACK_DIR=`cd $(dirname $0); cd ..; pwd`
 BUILD_DIR=$1
 CACHE_DIR=$2
 
-compile_jdk="$BUILDPACK_DIR/download/jdk1.8.0-71_1.8.071-1_amd64.deb"
+cd $BUILD_DIR
+pwd
+ls -la
 
-dpkg -i $compile_jdk
+cd $BUILDPACK_DIR
+pwd
+ls -la
 
-export JAVA_HOME=/usr/java/latest
+#compile_jdk="$BUILDPACK_DIR/download/jdk1.8.0-71_1.8.071-1_amd64.deb"
 
-. /etc/profile
+#dpkg -i $compile_jdk
+
+#export JAVA_HOME=/usr/java/latest
+
+#. /etc/profile
 
 
 # ---------------------------------------------------------------------------- #
